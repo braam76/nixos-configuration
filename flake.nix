@@ -7,9 +7,19 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, ... }:
+  outputs = 
+    { self
+    , nixpkgs
+    , home-manager
+    , nixvim
+    ,... 
+    }@inputs:
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -27,7 +37,11 @@
     homeConfigurations = {
       braam = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+	extraSpecialArgs = { inherit inputs; };
+        modules = [ 
+	  nixvim.homeManagerModules.nixvim
+	  ./home-manager/home.nix
+	];
       };
     };
   };
