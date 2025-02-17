@@ -39,7 +39,6 @@
         inherit pkgs;
 	extraSpecialArgs = { inherit inputs; };
         modules = [ 
-	  nixvim.homeManagerModules.nixvim
 	  ./home-manager/home.nix
 	];
       };
