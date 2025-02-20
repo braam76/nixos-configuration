@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -72,16 +72,18 @@
     description = "Ilgar Gamidov";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      ripgrep
-      emacs
-      screenfetch 
-      scrot
-      tldr
-      direnv
+	    ripgrep
+	    emacs
+	    screenfetch
+	    scrot
+	    tldr
+	    direnv
     ];
   };
 
   programs.firefox.enable = true;
+
+  programs.ssh.askPassword = "";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -89,15 +91,24 @@
   environment.systemPackages = with pkgs; [
     neovim
     wget
-    btop 
+    btop
     git
-	
     home-manager
     wezterm
-    tmux 
-
-    rustup
+    vscode-fhs
     
+    go
+    gopls
+    gcc
+    nil
+    python3
+    tmux
+    xclip
+    nodejs_23
+    tree
+    unzip
+    lua53Packages.luarocks
+
     dunst
     picom
     dmenu    # Application launcher
