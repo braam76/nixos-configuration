@@ -52,8 +52,6 @@
     };
   };
   
-
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -73,11 +71,27 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
 	    ripgrep
-	    emacs
-	    screenfetch
-	    scrot
-	    tldr
-	    direnv
+	  ripgrep
+	  emacs
+	  screenfetch
+	  scrot
+	  tldr
+      direnv
+
+      xfce.thunar
+
+      fzf
+      neovim
+      wget
+      btop
+      git
+      home-manager
+      ghostty
+      tmux
+      xclip
+      tree
+      unzip
+      lua53Packages.luarocks
     ];
   };
 
@@ -88,33 +102,24 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.nix-ld.enable = true;
+
   environment.systemPackages = with pkgs; [
-    neovim
-    wget
-    btop
-    git
-    home-manager
-    wezterm
-    vscode-fhs
-    
     go
     gopls
+
+    rustup
     gcc
     nil
     python3
-    tmux
-    xclip
     nodejs_23
-    tree
-    unzip
-    lua53Packages.luarocks
 
     dunst
     picom
-    dmenu    # Application launcher
-    i3blocks # Status bar
+    dmenu
+    i3blocks
     i3status
-    i3lock   # Screen locker
+    i3lock
     lxappearance
   ];
 
@@ -123,6 +128,7 @@
   fonts.packages = [
     pkgs.nerd-fonts.monofur
     pkgs.nerd-fonts.gohufont
+    pkgs.nerd-fonts.fantasque-sans-mono
   ];
 
   system.stateVersion = "24.05"; # Did you read the comment?
