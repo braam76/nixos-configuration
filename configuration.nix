@@ -37,11 +37,11 @@
   services.xserver = {
     enable = true;
 
-    displayManager.lightdm.enable = true;
-    displayManager.defaultSession = "none+i3";
+    displayManager.gdm.enable = true;
+    displayManager.defaultSession = "none+bspwm";
 
-    # Enable i3 window manager
-    windowManager.i3 = {
+    # Enable bspwm window manager
+    windowManager.bspwm = {
       enable = true;
     };
     
@@ -70,7 +70,6 @@
     description = "Ilgar Gamidov";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-	    ripgrep
 	  ripgrep
 	  emacs
 	  screenfetch
@@ -116,10 +115,10 @@
 
     dunst
     picom
-    dmenu
-    i3blocks
-    i3status
-    i3lock
+    rofi  # dmenu
+    sxhkd  # i3blocks
+    polybar  # i3status
+    feh  # i3lock
     lxappearance
   ];
 
