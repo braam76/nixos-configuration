@@ -1,0 +1,19 @@
+#!/nix/store/5mh7kaj2fyv8mk4sfq1brwxgc02884wi-bash-5.2p37/bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+sxhkd &
+setxkbmap -layout us,ru -option grp:win_space_toggle &
+picom --config $HOME/.config/picom/picom.conf &
+feh --bg-fill $HOME/Pictures/mont-blanc-massif-5120x2880-21326.jpg
+dunst &
+polybar &

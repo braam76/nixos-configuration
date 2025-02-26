@@ -5,6 +5,10 @@
   home.homeDirectory = "/home/braam";
   home.stateVersion = "24.11"; 
 
+  imports = [
+    ./window-manager.nix
+  ];
+
   home.packages = with pkgs; [
     ayu-theme-gtk
     bibata-cursors
