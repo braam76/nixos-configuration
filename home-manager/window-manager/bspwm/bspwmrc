@@ -14,6 +14,6 @@ bspc config gapless_monocle      true
 sxhkd &
 setxkbmap -layout us,ru -option grp:win_space_toggle &
 picom --config $HOME/.config/picom/picom.conf &
-feh --bg-fill $HOME/nixos-configuration/home-manager/window-manager/wallpapers/a_blue_and_orange_background.jpg
+feh --bg-fill $HOME/nixos-configuration/home-manager/window-manager/wallpapers/a_map_of_a_city.jpg
 dunst &
 polybar &

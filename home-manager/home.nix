@@ -14,6 +14,7 @@
     bibata-cursors
     cpufetch
     maxfetch
+    nitch
     lazygit
   ];
   
@@ -26,7 +27,10 @@
         font-size = 14;
         font-family = "FantasqueSansM Nerd Font";
         gtk-titlebar = false;
-      };
+        
+        background-opacity = 0.85;
+        background-blur-radius = 5;
+        };
     };
     
     bash = {

@@ -78,6 +78,7 @@
       direnv
 
       xfce.thunar
+      brave
 
       fzf
       neovim
@@ -112,6 +113,8 @@
     nil
     python3
     nodejs_23
+    luarocks
+    lua5_3
 
     dunst
     picom
