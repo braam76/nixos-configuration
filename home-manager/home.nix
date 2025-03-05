@@ -6,8 +6,9 @@
   home.stateVersion = "24.11"; 
 
   imports = [
-    ./window-manager.nix
-  ];
+    ./modules/window-manager
+    ./modules/terminal/ghostty.nix
+];
 
   home.packages = with pkgs; [
     ayu-theme-gtk
@@ -16,40 +17,10 @@
     maxfetch
     nitch
     lazygit
-  ];
-  
-  # terminal config
-  programs = {
-    ghostty = {
-      enable = true;
-      settings = {
-        theme = "Ayu Mirage";
-        font-size = 14;
-        font-family = "FantasqueSansM Nerd Font";
-        gtk-titlebar = false;
-        
-        background-opacity = 0.85;
-        background-blur-radius = 5;
-        };
-    };
     
-    bash = {
-      enable = true;
-
-      bashrcExtra = ''
-        eval "$(starship init bash)"
-      '';
-    };
-
-    starship = {
-      enable = true;
-    };
-  };
-
-
-  programs.emacs = {
-    enable = true;
-  };
+    eza
+    bat
+  ];
   
   programs.git = {
     enable = true;

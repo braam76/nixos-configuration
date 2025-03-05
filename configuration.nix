@@ -69,6 +69,8 @@
     isNormalUser = true;
     description = "Ilgar Gamidov";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
+
     packages = with pkgs; [
 	  ripgrep
 	  emacs
@@ -76,6 +78,7 @@
 	  scrot
 	  tldr
       direnv
+      zsh
 
       xfce.thunar
       brave
@@ -87,7 +90,6 @@
       git
       home-manager
       ghostty
-      tmux
       xclip
       tree
       unzip
@@ -98,6 +100,7 @@
   programs.firefox.enable = true;
 
   programs.ssh.askPassword = "";
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
