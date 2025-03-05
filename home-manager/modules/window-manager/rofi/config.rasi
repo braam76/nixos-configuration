@@ -18,4 +18,4 @@ configuration {
   display-keys: "Keys";
 }
 
-@theme "nixos-configuration/home-manager/window-manager/rofi/ayu-mirage.rasi"
+@theme "nixos-configuration/home-manager/modules/window-manager/rofi/ayu-mirage.rasi"
